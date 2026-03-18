@@ -1,7 +1,7 @@
 def get_range_for_difficulty(difficulty: str):
     """Return (low, high) inclusive range for a given difficulty."""
     # FIX: Swapped Hard range to 1-200 so it's actually harder than Normal (1-100).
-    # Previously Hard was 1-50, which was easier. Refactored from app.py using Cursor Agent mode.
+    # Previously Hard was 1-50, which was easier. Refactored from app.py using Claude via Cursor.
     if difficulty == "Easy":
         return 1, 20
     if difficulty == "Normal":
@@ -39,7 +39,7 @@ def check_guess(guess, secret):
     """
     # FIX: Corrected the hint messages — previously "Too High" said "Go HIGHER!"
     # and "Too Low" said "Go LOWER!", which was backwards and misleading.
-    # Refactored from app.py into logic_utils.py using Cursor Agent mode.
+    # Refactored from app.py into logic_utils.py using Claude via Cursor.
     if int(guess) == int(secret):
         return "Win", "🎉 Correct!"
 
@@ -53,7 +53,7 @@ def update_score(current_score: int, outcome: str, attempt_number: int):
     """Update score based on outcome and attempt number."""
     # FIX: Removed the +1 offset in the win formula (was double-counting attempts)
     # and removed the inconsistent even/odd bonus on "Too High" outcomes.
-    # Refactored from app.py using Cursor Agent mode.
+    # Refactored from app.py using Claude via Cursor.
     if outcome == "Win":
         points = 100 - 10 * attempt_number
         if points < 10:
