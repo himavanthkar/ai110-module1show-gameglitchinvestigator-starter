@@ -1,7 +1,7 @@
 import random
 import streamlit as st
 
-# FIX: Refactored all game logic into logic_utils.py using Claude via Cursor.
+# FIX: Refactored all game logic into logic_utils.py using Claude Code.
 # app.py now only handles UI and Streamlit state management.
 from logic_utils import get_range_for_difficulty, parse_guess, check_guess, update_score
 
